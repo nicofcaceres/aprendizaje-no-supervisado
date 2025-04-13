@@ -17,6 +17,31 @@ Para ello, se implementaron dos scripts principales:
 - Un **generador de datos sintéticos** que simula escenarios reales del sistema de transporte.
 - Un **modelo K-Means** que realiza el análisis y agrupamiento de los datos.
 
+### ¿Qué es K-Means?
+K-Means es un algoritmo de aprendizaje no supervisado que se utiliza para agrupar (clusterizar) datos en distintos grupos (o clusters) sin que estos tengan etiquetas previas.
+
+#### ¿Cómo funciona?
+Se elige un número K, que representa la cantidad de grupos que se desea encontrar.
+
+El algoritmo selecciona aleatoriamente K puntos llamados centroides (uno por cada grupo).
+
+Luego:
+
+- Cada punto del dataset se asigna al centroide más cercano.
+
+- Se recalculan los centroides como el promedio de todos los puntos asignados a cada grupo.
+
+- Se repite el proceso hasta que los centroides dejan de moverse significativamente (convergencia).
+
+#### ¿Para qué sirve?
+- Para descubrir patrones ocultos en los datos.
+
+- Identificar segmentos de usuarios (por ejemplo, tipos de pasajeros en un sistema de transporte).
+
+- Reducir la dimensionalidad para análisis visuales.
+
+- Clasificar información cuando no hay etiquetas disponibles.
+
 ---
 
 ## Librerías utilizadas
@@ -41,9 +66,9 @@ Para ello, se implementaron dos scripts principales:
 ## Explicación del script (`kmeans_model.py`)
 
 ### 1. Carga del dataset
+
 ```python
 df = pd.read_csv("datos_transporte_sintetico.csv")
-
 ```
 Se lee el archivo CSV que contiene los datos simulados del sistema de transporte.
 ### 2. Creación de variable objetivo
