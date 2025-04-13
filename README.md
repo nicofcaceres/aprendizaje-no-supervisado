@@ -43,6 +43,32 @@ Luego:
 - Clasificar información cuando no hay etiquetas disponibles.
 
 ---
+# Descripción de los Datos
+
+## Archivo: datos_transporte_sintetico.csv
+
+Este conjunto de datos contiene información sintética relacionada con el transporte urbano. Cada fila representa una observación en una determinada condición ambiental, de tiempo y de eventos especiales. A continuación, se describen las variables incluidas:
+
+### Variables del Dataset
+
+| Nombre de la Variable | Tipo de Dato | Descripción |
+|------------------------|--------------|-------------|
+| **hora_pico**          | Binaria (0 o 1) | Indica si la observación se realizó en hora pico (1) o no (0). |
+| **total_pasajeros**    | Numérica (entero) | Número total de pasajeros observados en una unidad de transporte en ese instante. |
+| **clima_lluvioso**     | Binaria (0 o 1) | Indica si había lluvia al momento de la observación (1 = sí, 0 = no). |
+| **evento_especial**    | Binaria (0 o 1) | Indica si se estaba realizando un evento especial que pudiera afectar el tráfico (1 = sí, 0 = no). |
+
+### Descripción General
+
+Este dataset fue diseñado para realizar **análisis de agrupamiento** (clustering) utilizando métodos de aprendizaje no supervisado como **K-Means**. Las variables seleccionadas permiten evaluar el comportamiento de los usuarios del transporte en función de condiciones ambientales y temporales.
+
+### Posibles Usos
+
+- Identificación de patrones de demanda de pasajeros.
+- Clasificación de situaciones comunes y atípicas en el transporte.
+- Segmentación de escenarios según condiciones ambientales y de evento.
+
+---
 
 ## Librerías utilizadas
 
@@ -55,7 +81,6 @@ Luego:
 ### En el script de modelado (`kmeans_model.py`)
 
 - **`pandas`**: para manipulación del dataset.
-- **`numpy`**: para procesamiento numérico.
 - **`scikit-learn (sklearn)`**:
   - `StandardScaler`: para escalar las variables y que tengan igual peso.
   - `KMeans`: implementación del algoritmo K-Means.
@@ -112,3 +137,5 @@ Se grafica la relación entre total de pasajeros y hora pico, coloreando los pun
 
 ### Conclusión
 Este ejercicio permitió aplicar técnicas de aprendizaje no supervisado para analizar datos de transporte masivo, facilitando la identificación de patrones en el comportamiento de los usuarios bajo diferentes condiciones. El uso de K-Means ofrece una visión exploratoria útil para segmentar estaciones o situaciones y apoyar la toma de decisiones en políticas de movilidad urbana.
+
+[Video Presentacion](https://laiberocol-my.sharepoint.com/:v:/g/personal/ncacere1_estudiante_ibero_edu_co/EYkRQ2K_v0JLkdKxOpjbi-wB0zJZez2SL1JEd5y2PI2fmw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=rdGEbv)
